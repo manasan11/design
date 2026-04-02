@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Polk</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: rgb(70, 153, 249);
+        }
+
+        .nav-item:hover {
+            background: #000;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        .form-control {
+            border-radius: 20px;
+        }
+
+        .Main1,
+        .Main2,
+        .Main4,
+        .M5,
+        .M6,
+        .M7,
+        .Main6 {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 40px 15px;
+        }
+
+        .M1 {
+            transform: rotate(90deg);
+            color: white;
+            min-width: 200px;
+            padding-top: 300px;
+        }
+
+        .img-hover-box,
+        .img-hover-box1,
+        .img-hover-box2 {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            max-width: 100%;
+        }
+
+        .img-hover-box img,
+        .img-hover-box2 img {
+            width: 100%;
+            height: auto;
+            transition: transform .4s;
+            display: block;
+        }
+
+        .img-hover-box1 img {
+            height: 725px;
+            width: 380px;
+            transition: transform .4s;
+            display: block;
+
+        }
+
+        .overlay-text,
+        .overlay-text1,
+        .overlay-text2 {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, .55);
+            color: #fff;
+            opacity: 0;
+            transition: opacity .4s;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .img-hover-box:hover img,
+        .img-hover-box1:hover img,
+        .img-hover-box2:hover img {
+            transform: scale(1);
+        }
+
+        .img-hover-box:hover .overlay-text,
+        .img-hover-box1:hover .overlay-text1,
+        .img-hover-box2:hover .overlay-text2 {
+            opacity: 1;
+        }
+
+        button.overlay-btn {
+            background: rgba(255, 255, 255, .2);
+            border: 2px solid #000;
+            border-radius: 6px;
+            padding: 10px 20px;
+        }
+
+        button.overlay-btn:hover {
+            background: rgba(255, 255, 255, .3);
+        }
+
+        .main {
+            background-color: rgb(70, 153, 249);
+        }
+
+        @media (max-width:767px) {
+            .M1 {
+                transform: none;
+                text-align: center;
+                padding-left: 0;
+            }
+        }
+
+        .nav-item {
+            font-weight: bold;
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        #c .btn.btn-dark {
+            background-color: #000;
+            width: 200px;
+            color: #fff;
+            border: none;
+            transition: background 0.25s ease, color 0.25s ease;
+            padding: 10px;
+        }
+
+        #c .btn.btn-dark:hover {
+            background-color: #fff;
+            color: #000;
+            border: 2px solid #000;
+        }
+
+        a.text-white:hover {
+            color: #000 !important;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: black;
+        }
+
+        .Contact {
+            background-color: rgb(70, 153, 249);
+            width: 100%;
+            padding: 40px 15px;
+        }
+
+        .Contact input[type="text"],
+        .Contact input[type="email"],
+        .Contact input[type="number"],
+        .Contact textarea {
+            width: 100%;
+            max-width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 6px;
+        }
+
+        .forms {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+       
+        .map-responsive {
+            position: relative;
+            padding-bottom: 75%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .map-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .send-btn {
+            background-color: black;
+            color: white;
+            width: 120px;
+            padding: 8px 0;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+        }
+
+        .send-btn:hover {
+            background-color: white;
+            color: black;
+            transform: scale(1.00);
+            border: 2px solid black;
+        }
+
+        .MAIN {
+            
+
+            width: 100%;
+            margin: auto;
+            padding-left: 25%;
+            
+
+        }
+
+        .MAIN1 {
+            display: flex;
+            gap: 50px;
+            color:black
+            
+            
+          
+        }
+
+        ul {
+           
+            list-style: none;
+            line-height: 30px;
+            padding-left: 0;
+        }
+
+        .i {
+            text-align: center;
+            color: black;
+            padding: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: small;
+            padding-bottom: 10px;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="#">POLK</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link text-light" href="#a">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="#b">ABOUT</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="#c">DESIGN</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="#d">COMPANY</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="#e">NEWS</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="#f">CONTACT US</a></li>
+                </ul>
+                <form class="d-flex"><input class="form-control" type="search" placeholder="Search"></form>
+            </div>
+        </div>
+    </nav>
+
+    <section id="a" class="container py-5">
+        <div class="Main1">
+            <div class="M1">
+                <h1>DESIGN</h1>
+                <h1>FOR</h1>
+                <h1>YOUR</h1>
+                <h1>HOUSE</h1>
+            </div>
+            <div class="M2">
+                <div id="carouselHero" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active"><img
+                                src="https://themewagon.github.io/Polk/images/banner-img1.png" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item"><img src="https://themewagon.github.io/Polk/images/banner-img2.png"
+                                class="d-block w-100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="b" class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-white">
+                <h1 style="color: #000; font-weight: bold;" class="fw-bold">About <span
+                        class="text-light">Company</span></h1>
+                <p class="pt-3">there isn't
+                    anything embarrassing hidden in the middle of text. All <br>
+                    the Lorem Ipsum generators on the Internet tend to repeat predefined there isn't anything
+                    embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet
+                    tend
+                    to repeat predefined </p>
+            </div>
+            <div class="col-md-6"><img src="https://themewagon.github.io/Polk/images/about-img.png" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+ 
+    <section id="c" class="container py-5 text-center">
+        <h1 class="fw-bold">Our Interior <span class="text-light">Design work</span></h1>
+        <p class="text-light">All the Lorem Ipsum generators on the Internet tend to repeat text.</p>
+        <div class="Main4">
+            <div class="img-hover-box"><img src="https://themewagon.github.io/Polk/images/img-1.png">
+                <div class="overlay-text">
+                    <h5>DESIGN WORK</h5>
+                    <p>Elegant design for your home</p><button class="overlay-btn">READ MORE</button>
+                </div>
+            </div>
+            <div class="img-hover-box1"><img src="https://themewagon.github.io/Polk/images/img-3.png">
+                <div class="overlay-text1">
+                    <h5>DESIGN WORK</h5>
+                    <p>Elegant design for your home</p><button class="overlay-btn">READ MORE</button>
+                </div>
+            </div>
+            <div class="img-hover-box2"><img src="https://themewagon.github.io/Polk/images/img-4.png">
+                <div class="overlay-text2">
+                    <h5>DESIGN WORK</h5>
+                    <p>Elegant design for your home</p><button class="overlay-btn">READ MORE</button>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-dark mt-3">See More</button>
+    </section>
+
+    
+    <section id="d" class="container py-5 text-center">
+        <h1 class="fw-bold">Architecture <span class="text-light">And Decor</span></h1>
+        <p class="text-light">Various versions have evolved over the years, sometimes by accident,</p>
+        <div class="M5">
+            <img src="https://themewagon.github.io/Polk/images/company-img1.png" class="img-fluid">
+            <div class="text-white text-start">
+                <h2 style="font-weight: bold; color: black;">Home <span class="text-light">Design</span></h2>
+                <p>alteration in some form, by injected humour, or
+                    randomised <br>
+                    words which don't look even slightly believable. If you are going <br>
+                    to use alteration in some form, by injected humour, or <br>
+                    randomised words which don't look even slightly believable. If <br>
+                    you are going to use</p>
+                <a href="#" class="text-white">See More</a>
+            </div>
+        </div>
+        <div class="M6 flex-column flex-md-row">
+            <div class="text-white text-start">
+                <h2 style="font-weight: bold; color: black;">Office <span class="text-light">Design</span></h2>
+                <p>alteration in some form, by injected humour, or
+                    randomised <br>
+                    words which don't look even slightly believable. If you are going <br>
+                    to use alteration in some form, by injected humour, or <br>
+                    randomised words which don't look even slightly believable. If <br>
+                    you are going to use</p>
+                <a href="#" class="text-white">See More</a>
+            </div>
+            <img src="https://themewagon.github.io/Polk/images/company-img2.png" class="img-fluid">
+        </div>
+        <div class="M7">
+            <img src="https://themewagon.github.io/Polk/images/company-img3.png" class="img-fluid">
+            <div class="text-white text-start">
+                <h2 style="font-weight: bold; color: black;">Furniture <span class="text-light">Design</span></h2>
+                <p>alteration in some form, by injected humour, or
+                    randomised <br>
+                    words which don't look even slightly believable. If you are going <br>
+                    to use alteration in some form, by injected humour, or <br>
+                    randomised words which don't look even slightly believable. If <br>
+                    you are going to use</p>
+                <a href="#" class="text-white">See More</a>
+            </div>
+        </div>
+    </section>
+
+   
+    <section class="clients py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Clients <span class="text-primary">Says</span></h2>
+            <div id="clientCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-md-5 text-center">
+                                <img src="https://themewagon.github.io/Polk/images/client-img1.png" class="rounded mb-3"
+                                    style="width:100px;height:100px;object-fit:cover;">
+                                <h5>JOY MARO</h5>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                            <div class="col-md-5 text-center">
+                                <img src="https://themewagon.github.io/Polk/images/client-img2.png" class="rounded mb-3"
+                                    style="width:100px;height:100px;object-fit:cover;">
+                                <h5>KINPA LOMI</h5>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#clientCarousel"
+                    data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                <button class="carousel-control-next" type="button" data-bs-target="#clientCarousel"
+                    data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="e" class="main py-5">
+        <h1 class="fw-bold text-center mb-4">
+            Our <span class="text-white">Team</span>
+        </h1>
+        <div class="Main6">
+            <img src="https://themewagon.github.io/Polk/images/news-img.png" class="img-fluid">
+            <div class="text-white">
+                <h1 style="color: black;" class="fw-bold">BLOOM <span style="color: white;">Royika</span></h1>
+                <p class="text-light">many variations of passages of Lorem Ipsum available, but the <br>
+                    majority have suffered alteration in some form, by injected <br>
+                    humour, or randomised words which don't look even slightly <br>
+                    believable. If you are going to use a passage of Lorem Ipsum, <br>
+                    you need to be sure there</p>
+                <a href="#" class="text-white">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="f" class="Contact">
+        <h1 class="fw-bold text-center mb-4">
+            Contact <span class="text-white">Us</span>
+        </h1>
+
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+               
+                <div class="col-12 col-md-6">
+                    <form class="forms">
+                        <input type="text" placeholder="Name">
+                        <input type="email" placeholder="Email">
+                        <input type="number" placeholder="Phone Number">
+                        <textarea rows="5" placeholder="Message"></textarea>
+                        <button class="send-btn">SEND</button>
+                    </form>
+                </div>
+
+               
+                <div class="col-12 col-md-6">
+                    <div class="map-responsive">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916246075636!2d2.2944812999999997!3d48.858370099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sEiffel%20Tower!5e0!3m2!1sen!2sin!4v1758026024569!5m2!1sen!2sin"
+                            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> <br><br> <br>
+
+            
+        </div>
+      
+    </div>
+    <footer class="i">
+            <div class="MAIN">
+        <div class="MAIN1">
+            <div class="MAIN2">
+                <h3>POLK</h3>
+                <p>Here you can use rows and columns to <br> organize your footer contnet. Lorem <br> ipsum, dolor sit
+                    amet
+                    consectetur <br> adipisicing elit.</p>
+            </div>
+            <div class="MAIN3">
+                <h3>INFORMATIONS</h3>
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Design</li>
+                    <li>Company</li>
+                    <li>Contact Us</li>
+
+                </ul>
+            </div>
+           
+            <div class="MAIN3">
+                <h3>CONTACT US</h3>
+                <ul>
+                    <li>New York,NY 10012,US</li>
+                    <li>info@example.com</li>
+                    <li>+01 234 567 89</li>
+                    
+
+                </ul>
+            </div>
+    </footer>
+        <p class="i">&copy;2020 copyright:MDBootstrap.com</p>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+
+</html>
